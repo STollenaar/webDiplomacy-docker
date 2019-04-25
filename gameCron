@@ -1,0 +1,2 @@
+* * * * * root echo processing > /proc/1/fd/1 2>/proc/1/fd/2; /usr/bin/wget -O - 'http://localhost/gamemaster.php?gameMasterSecret=6625552' >/dev/null 2>&1
+# Empty
