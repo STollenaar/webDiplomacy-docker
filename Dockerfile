@@ -17,5 +17,6 @@ RUN crontab /etc/cron.d/hello-cron
 # install the database
 ADD webDiplomacy/install /db_install
 RUN /scripts/init-db.sh
+RUN /scripts/variants-fix.sh
 
 CMD  ./scripts/docker-entrypoint.sh
