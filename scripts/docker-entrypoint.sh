@@ -15,6 +15,8 @@ cron gameCron
 service apache2 start
 service mysql start
 
+./scripts/update-db.sh
+
 log "Confirming source is mounted"
 
 if [ ! -f /var/www/example.com/public_html/index.php ]; then
