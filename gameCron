@@ -1,2 +1,2 @@
-*/5 * * * * wget -O - http://172.17.0.1/gamemaster.php?gameMasterSecret=6625552 >/dev/null 2>&1
+*/5 * * * * root echo processing > /proc/1/fd/1 2>/proc/1/fd/2; wget -O - http://172.17.0.1/gamemaster.php?gameMasterSecret=6625552 >/dev/null 2>&1
 # Empty
