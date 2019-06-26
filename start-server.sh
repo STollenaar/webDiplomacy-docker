@@ -5,7 +5,7 @@ SCRIPT_DIR=$(cd $(dirname "$0"); pwd)
 trap "handle_error" 0
 
 git submodule foreach git pull origin master
-sh ./variants-fix.sh
+#sh ./variants-fix.sh
 
 function handle_error () {
    error "$STAGE failed"
@@ -44,7 +44,7 @@ if [ -z ${WEBDIP_PORT+x} ] ; then
 fi
 
 trap "log 'Server stopped' ;warnings" 0
-docker run -p $WEBDIP_PORT:80 --rm -t -i \
+docker run -d --name webdiplomacydevLinux -p $WEBDIP_PORT:80 --rm -t -i \
   -v "$SCRIPT_DIR"/webDiplomacy:/var/www/example.com/public_html \
   -e WEBDIP_PORT=$WEBDIP_PORT \
   -v webdip:/var/ \
