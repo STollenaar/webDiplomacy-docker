@@ -7,7 +7,7 @@ trap "error 'Failed to start webDiplomacy Development Server'" 0
 
 log "Starting services"
 
-chown -R www-data:www-data /var/www
+chgrp -R www-data:www-data /var/www
 chmod -R g+rw /var/www
 
 cron gameCron
