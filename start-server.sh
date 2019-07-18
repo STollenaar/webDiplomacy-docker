@@ -5,7 +5,7 @@ SCRIPT_DIR=$(cd $(dirname "$0"); pwd)
 trap "handle_error" 0
 
 git submodule foreach git pull origin master
-#sh ./variants-fix.sh
+sh ./variants-fix.sh
 
 function handle_error () {
    error "$STAGE failed"
@@ -36,7 +36,7 @@ fi
 
 STAGE="Build"
 log "Building image"
-docker build -t webdiplomacydev $SCRIPT_DIR
+docker build --rm -t webdiplomacydev $SCRIPT_DIR
 
 log "Starting server"
 if [ -z ${WEBDIP_PORT+x} ] ; then
